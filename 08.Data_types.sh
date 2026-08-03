@@ -13,7 +13,7 @@ num=10
 echo $((num + 5))
 
 #3. Float/Decimal  --------> Shell doesn’t support floats directly. You need bc or awk.
-echo "10.5 + 2.3" | bc
+# In locak it is not working "echo "10.5 + 2.3" | bc"
 awk 'BEGIN {print 10.5 + 2.3}'
 
 #4. Boolean    --------> Represented using true or false (exit codes).

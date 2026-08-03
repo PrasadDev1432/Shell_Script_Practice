@@ -9,9 +9,9 @@
 
 num=$1
 
-if [ $num -gt 10]; then
+if [ $num -gt 10 ]; then
     echo "Given Number $num is greater then 10"
-elif [ $num -lt 10]; then
+elif [ $num -lt 10 ]; then
     echo "Given Number $num is less then 10"
 else
 	echo "Given Number $num is equal to 10"

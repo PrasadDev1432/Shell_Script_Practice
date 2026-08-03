@@ -15,4 +15,4 @@ R="\e[31m"
 N="\e[37m"
 
 
-echo "My Shirt Clolor : $R RedColor Shirt $N"
+echo "My Shirt Clolor : ${R} RedColor Shirt ${N}"

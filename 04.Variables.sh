@@ -1,25 +1,14 @@
 #!/bin/bash
 
-# echo "$A:: What is the timings of the course?"
-# echo "$B:: Enter course start date (YYYY-MM-DD):" 
-# echo "$A:: What is the timings of the course?"
-# echo "$B:: Enter course start date (YYYY-MM-DD):" 
+A=$1
+B=$2
 
-#Using User inputs
-
-# # Declaration & Access the Variable
-#AME="Prasad"
-# AGE=24
-# CITY="Machilipatnam"
-
-# echo " My Name Is : $NAME ; I am $AGE yrs old ; I am From $CITY"
+read COURSE
+read ID
+read -s Phn_Number 
 
 
-# # User Input
-# R="\e[31m"
-# N="\e[37m"
- 
-# # shellcheck disable=SC2034
-# read -r usercolor 
-
-# echo "My Shirt Clolor : $R usercolor $N"
+echo "$A:: Hi $2, How are you?"
+echo "$B:: Hello $A, I am fine. How are you?"
+echo "$A:: What are you learning recently? And Suggest on Cource $ID and share ur phn number also"
+echo "$B:: I am learning $COURSE $A This is My Phn Numer : $Phn_Number"

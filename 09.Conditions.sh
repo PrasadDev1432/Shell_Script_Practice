@@ -17,5 +17,7 @@ elif [ $num -lt 10 ]; then
 	exit 1
 else
 	echo "Given Number $num is equal to 10"
-
 fi
+
+
+

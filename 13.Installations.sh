@@ -1,9 +1,9 @@
 #!/bin/bash
 
-UID=$(id -u)
+USERID=$(id -u)
 
-if [ $UID -ne 0 ]; then
-    echo "Error:: Please run this script with root privalege"
+if [ $USERID -ne 0 ]; then
+    echo "ERROR:: Please run this script with root privalege"
 	exit 1
 fi
 

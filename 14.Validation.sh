@@ -23,7 +23,7 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
 Checking(){
     if [ $1 -ne 0 ]; then
         dnf install $2 -y
-        Validate $? $2
+        VALIDATE $? $2
     else
         echo -e " $G $2 Already Installed $N Now $R Removing this Installed Software $N "
 		dnf remove -y $2

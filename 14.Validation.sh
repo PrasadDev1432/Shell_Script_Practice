@@ -21,40 +21,20 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
 }
 
 Checking(){
-    if [ $? -ne 0 ]; then
+    if [ $1 -ne 0 ]; then
         dnf install $2 -y
         Validate $? $2
     else
-        echo -e " $Y $2 Already Installed Please Skip this Software Installation $N "
+        echo -e " $G $2 Already Installed $N Now $R Removing this Installed Software $N "
+		dnf remove -y $2
     fi
 }
 
 dnf list installed mysql
 Checking $? "mysql"
 
-
-
-dnf list installed mysql
-# Install if it is not found
-if [ $? -ne 0 ]; then
-    dnf install mysql -y
-    VALIDATE $? "MySQL"
-else
-    echo -e "MySQL already exist ... $Y SKIPPING $N"
-fi
-
 dnf list installed nginx
-if [ $? -ne 0 ]; then
-    dnf install nginx -y
-    VALIDATE $? "Nginx"
-else
-    echo -e "Nginx already exist ... $Y SKIPPING $N"
-fi
+Checking $? "nginx"
 
 dnf list installed python3
-if [ $? -ne 0 ]; then
-    dnf install python3 -y
-    VALIDATE $? "python3"
-else
-    echo -e "Python3 already exist ... $Y SKIPPING $N"
-fi
+Checking $? "python3"

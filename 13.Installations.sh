@@ -15,7 +15,7 @@ fi
 
 
 Validate(){
-    if [ $? -ne 0 ]; then
+    if [ $1 -ne 0 ]; then
 	    echo "ERROR:: Installing $2 is FAILURE "
 		exit 1
 	else
@@ -24,7 +24,7 @@ Validate(){
 }
 
 Checking(){
-    if [ $? -ne 0 ]; then
+    if [ $1 -ne 0 ]; then
         dnf install $2 -y
         Validate $? $2
     else
@@ -39,4 +39,4 @@ dnf list installed nginx
 Checking $? "nginx"
 
 dnf list installed python3
-Checking $? "Python"
+Checking $? "python3"

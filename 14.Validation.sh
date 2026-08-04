@@ -20,6 +20,20 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
     fi
 }
 
+Checking(){
+    if [ $? -ne 0 ]; then
+        dnf install $2 -y
+        Validate $? $2
+    else
+        echo -e " $Y $2 Already Installed Please Skip this Software Installation $N "
+    fi
+}
+
+dnf list installed mysql
+Checking $? "mysql"
+
+
+
 dnf list installed mysql
 # Install if it is not found
 if [ $? -ne 0 ]; then

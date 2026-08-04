@@ -37,4 +37,4 @@ dnf list installed nginx
 Checking $? "nginx"
 
 dnf list installed radis
-Checking $? "radis"
+Checking $? "redis"

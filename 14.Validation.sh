@@ -36,5 +36,5 @@ Checking $? "mysql"
 dnf list installed nginx
 Checking $? "nginx"
 
-dnf list installed python3
-Checking $? "python3"
+dnf list installed radis
+Checking $? "radis"

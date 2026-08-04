@@ -2,8 +2,11 @@
 
 #Now do the add even conditions
 
+
 echo "Please Enter Number : "
 read -s -r NUMBER
+
+#condition -1 with using inside $ symbal
 
 if [ $(($NUMBER % 2)) -eq 0 ]; then 
     echo "Given Number is Even Number"
@@ -14,6 +17,7 @@ else
 fi
 
 
+#condition -2 without using inside $ symbal
 
 if [ $((NUMBER % 2)) -eq 0 ]; then 
     echo "Given Number is Even Number"

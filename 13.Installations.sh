@@ -2,28 +2,41 @@
 
 USERID=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+
 if [ $USERID -ne 0 ]; then
-    echo "ERROR:: Please run this script with root privalege"
+	echo -e " ${R} ERROR:: Please run this script with root privelege ${N} "
 	exit 1
 fi
 
 
 Validate(){
     if [ $? -ne 0 ]; then
-	    echo "ERROR:: Installing $2 is failure "
+	    echo "ERROR:: Installing $2 is FAILURE "
 		exit 1
 	else
 		echo "Installation $2 is SUCCESS"
 	fi
 }
 
-dnf install mysql -y
-Validate $? "MySQL"
+Checking(){
+    if [ $? -ne 0 ]; then
+        dnf install $2 -y
+        Validate $? $2
+    else
+        echo -e " $Y $2 Already Installed Please Skip this Software Installation $N "
+    fi
+}
 
-dnf install nginx -y
-Validate $? "Nginx"
+dnf list installed mysql
+Checking $? "mysql"
 
-dnf install python3 -y
-Validate $? "Python"
+dnf list installed nginx
+Checking $? "nginx"
 
-
+dnf list installed python3
+Checking $? "Python"

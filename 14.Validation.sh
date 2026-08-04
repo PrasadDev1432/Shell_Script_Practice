@@ -36,5 +36,5 @@ Checking $? "mysql"
 dnf list installed nginx &>/dev/null
 Checking $? "nginx"
 
-dnf list installed radis &>/dev/null
+dnf list installed redis &>/dev/null
 Checking $? "redis"

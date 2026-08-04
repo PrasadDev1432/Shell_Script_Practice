@@ -30,11 +30,11 @@ Checking(){
     fi
 }
 
-dnf list installed mysql
+dnf list installed mysql &>/dev/null
 Checking $? "mysql"
 
-dnf list installed nginx
+dnf list installed nginx &>/dev/null
 Checking $? "nginx"
 
-dnf list installed radis
+dnf list installed radis &>/dev/null
 Checking $? "redis"

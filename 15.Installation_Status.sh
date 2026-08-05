@@ -22,8 +22,8 @@ Validate(){
 }
 
 Checking(){
-    if [ "$1" -ne 0 ]; then
-        dnf install "$2" -y
+    if [ "$1" -eq 0 ]; then
+        dnf remove "$2" -y
         Validate $? "$2"
     else
         echo -e " $Y $2 Already Installed Please Skip this Software Installation $N "

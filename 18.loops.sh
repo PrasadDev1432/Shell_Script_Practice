@@ -42,9 +42,11 @@ Checking(){
     if [ "$1" -ne 0 ]; then
         dnf install "$2" -y &>>"$LOGS_FILE"
         Validate $? "$2"
+
     else
-        echo -e " $Y $2 Already Installed Please ....................................................................Skip this Software Installation $N " | tee -a "$LOGS_FILE"
-    fi
+		echo -e " $Y $2 Already Installed Please ....................................................................remove this Software $N " | tee -a "$LOGS_FILE"
+    	dnf remove "$2" -y &>>"$LOGS_FILE"
+	fi
 }
 
 

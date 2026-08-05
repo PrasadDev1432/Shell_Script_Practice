@@ -33,18 +33,18 @@ Validate() {
 
 Checking(){
     if [ "$1" -ne 0 ]; then
-        dnf install "$2" -y &>>LOGS_FILE
+        dnf install "$2" -y &>>"$LOGS_FILE"
         Validate $? "$2"
     else
         echo -e " $Y $2 Already Installed Please Skip this Software Installation $N "
     fi
 }
 
-dnf list installed mysql &>>LOGS_FILE
+dnf list installed mysql &>>"$LOGS_FILE"
 Checking $? "mysql"
 
-dnf list installed nginx &>>LOGS_FILE
+dnf list installed nginx &>>"$LOGS_FILE"
 Checking $? "nginx"
 
-dnf list installed redis &>>LOGS_FILE
+dnf list installed redis &>>"$LOGS_FILE"
 Checking $? "redis"

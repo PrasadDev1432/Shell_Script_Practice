@@ -14,20 +14,20 @@ LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" #/var/log/shell-scrpiting/16-Logs.log
 
 mkdir -p $LOGS_FOLDER
 
-echo "Script Started executed at : $(date)"
+echo "Script Started executed at : $(date)" | tee -a "$LOGS_FILE"
 
 if [ "$USERID" -ne 0 ]; then
-	echo -e " ${R} ERROR:: Please run this script with root privelege ${N} "
+	echo -e " ${R} ERROR:: Please run this script with root privelege ${N} " | tee -a "$LOGS_FILE"
 	exit 1
 fi
 
 
 Validate() {
     if [ "$1" -ne 0 ]; then
-	    echo "ERROR:: Installing $2 is FAILURE "
+	    echo "ERROR:: Installing $2 is FAILURE " | tee -a "$LOGS_FILE"
 		exit 1
 	else
-		echo -e " $G Installation $2 is SUCCESS $N "
+		echo -e " $G Installation $2 is SUCCESS $N " | tee -a "$LOGS_FILE"
 	fi
 }
 
@@ -36,7 +36,7 @@ Checking(){
         dnf install "$2" -y &>>"$LOGS_FILE"
         Validate $? "$2"
     else
-        echo -e " $Y $2 Already Installed Please Skip this Software Installation $N "
+        echo -e " $Y $2 Already Installed Please Skip this Software Installation $N " | tee -a "$LOGS_FILE"
     fi
 }
 

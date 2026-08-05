@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #Shell-Script Basic For Loop Function
-for i in {1..20}
-do
-   ech0 "$i"
-done
+# for i in {1..20}
+# do
+#    ech0 "$i"
+# done
 
 # Implimate the for loop in installation coding
 
@@ -55,8 +55,8 @@ do
 done
 
 
-dnf list installed nginx &>>"$LOGS_FILE"
-Checking $? "nginx"
+# dnf list installed nginx &>>"$LOGS_FILE"
+# Checking $? "nginx"
 
-dnf list installed redis &>>"$LOGS_FILE"
-Checking $? "redis"
+# dnf list installed redis &>>"$LOGS_FILE"
+# Checking $? "redis"

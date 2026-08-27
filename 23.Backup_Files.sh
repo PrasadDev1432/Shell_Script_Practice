@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-source_dir="$PWD/app_log"
+source_dir="/home/ec2-user/app_log"
 
 if [ -d "$source_dir" ]; then
     echo "Folder already exists"

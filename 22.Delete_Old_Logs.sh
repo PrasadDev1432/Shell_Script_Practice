@@ -9,8 +9,8 @@ set -e
 
 trap 'echo "ERROR at line: $LINENO | Command: $BASH_COMMAND"' ERR
 
-SOURCE_DIR="$PWD/app_log"
-DEST_DIR="$PWD/backup"
+SOURCE_DIR="/home/ec2-user/app_log"
+DEST_DIR="/home/ec2-user/backup"
 
 mkdir -p "$DEST_DIR"
 

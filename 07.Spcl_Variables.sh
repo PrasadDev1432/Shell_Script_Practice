@@ -20,10 +20,10 @@ echo "Total args: $#"
 # $* → merges them into one string.
 
 #4. $@  ---> Meaning: All arguments as a list (each treated separately).
-echo "All variables passed to the script: $@"
+echo 'All variables passed to the script: "$@"'
 
 #5. $* ----> Meaning: All arguments as a single string.
-echo "All variables passed to the script: $@"
+echo 'All variables passed to the script: "$@"'
 
 #6. $$  ----> Meaning: Process ID (PID) of the running script.
 echo "Process ID: $$"
@@ -31,7 +31,7 @@ echo "Process ID: $$"
 #7. $? ----> Meaning: Exit status of the last command.
 # 0 → Success
 # Non‑zero → Error
-echo "Exit status: $?"
+echo 'Exit status: "$?"'
 
 #8. $!  ----> Meaning: PID of the last background process.
 sleep 60 &

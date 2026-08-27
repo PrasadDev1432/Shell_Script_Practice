@@ -35,12 +35,12 @@ while IFS= read -r filepath
 do
     if cp -f "$filepath" "$DEST_DIR/"; then
 
-        echo -e "${G}Copied successfully: $filepath${N}"
+        echo -e "${G}Copied ....................................successfully: $filepath${N}"
 
         echo -e "${Y}Deleting the file: $filepath${N}"
 
         if rm -f "$filepath"; then
-            echo -e "${G}Deleted successfully: $filepath${N}"
+            echo -e "${G}Deleted ...............................successfully: $filepath${N}"
         else
             echo -e "${R}Deleting file FAILED: $filepath${N}"
         fi

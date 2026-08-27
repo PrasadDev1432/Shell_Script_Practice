@@ -10,7 +10,6 @@
 # '>>' -->   Apending the output
 # '&>>' -->  Apending the output
 
-
 #!/bib/bash
 
 USERID=$(id -u)
